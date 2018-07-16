@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.jakewharton.butterknife'
+//apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    signingConfigs {
+        //签名文件配置
+        config {
+            keyAlias 'qk'//别名
+            keyPassword 'ps4118'//密码
+            storeFile file('D:/Android/Quicktouch/quicktouch.jks')//文件路径
+            storePassword 'ps4118'//密码
+        }
+    }
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.pft.quicktouch"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //5.0以上的材质视图
+    implementation 'com.android.support:design:27.1.1'
+
+    //网络请求
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    //图片显示
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    //圆角imageview
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //下拉刷新上拉加载
+    implementation project(':PullToRefresh')
+    //控件注解
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    //对话框，提示框
+    implementation 'com.kongzue.dialog:dialog:2.2.7'
+    //    implementation 'com.mylhyl:circleDialog:2.6.6'
+    //等待框(部分提交网络请求的等待视图)
+    implementation 'com.github.gittjy:LoadingDialog:1.0.2'
+    //json解析
+    implementation 'com.alibaba:fastjson:1.2.47'
+}

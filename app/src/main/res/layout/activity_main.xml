@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true">
+
+    <RadioGroup
+        android:id="@+id/base_rg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/order"
+            style="@style/rb_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:checked="true"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/bottom_order_select"
+            android:text="订单"
+            android:textColor="@drawable/bottom_tv_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/food"
+            style="@style/rb_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:checked="false"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/bottom_food_select"
+            android:text="菜品"
+            android:textColor="@drawable/bottom_tv_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/count"
+            style="@style/rb_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:checked="false"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/bottom_count_select"
+            android:text="统计"
+            android:textColor="@drawable/bottom_tv_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/sale"
+            style="@style/rb_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/bottom_sale_select"
+            android:text="促销"
+            android:textColor="@drawable/bottom_tv_color"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/mime"
+            style="@style/rb_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:checked="false"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/bottom_mime_select"
+            android:text="我的"
+            android:textColor="@drawable/bottom_tv_color"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@id/base_rg"
+        android:background="#ededed" />
+
+    <FrameLayout
+        android:id="@+id/base_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line"
+        android:layout_alignParentLeft="true"></FrameLayout>
+
+</RelativeLayout>

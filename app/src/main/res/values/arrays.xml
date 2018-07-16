@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //菜品编辑弹窗处理--food_handle
+    <string-array name="food_handle">
+        <item>加推菜品</item>
+        <item>打折</item>
+        <item>编辑菜品</item>
+
+    </string-array>
+
+    <string-array name="foodType_add">
+        <item>套饭</item>
+        <item>面条</item>
+        <item>米粉</item>
+        <item>小吃</item>
+        <item>烧菜</item>
+    </string-array>
+    <string-array name="foodType_search">
+        <item>全部</item>
+        <item>面条</item>
+        <item>米粉</item>
+        <item>小吃</item>
+        <item>烧菜</item>
+    </string-array>
+    <string-array name="foodStatus_search">
+        <item>全部</item>
+        <item>有货</item>
+        <item>售罄</item>
+        <item>下架</item>
+    </string-array>
+    <string-array name="order_spanner">
+        <item>最近三天</item>
+        <item>最近七天</item>
+        <item>最近一个月</item>
+    </string-array>
+</resources>

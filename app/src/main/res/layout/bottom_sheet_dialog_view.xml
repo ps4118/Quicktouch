@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/handleLv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#ededed"
+        android:dividerHeight="1dp"
+        android:entries="@array/food_handle"></ListView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#DEDEDE"></View>
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="取 消"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+</LinearLayout>

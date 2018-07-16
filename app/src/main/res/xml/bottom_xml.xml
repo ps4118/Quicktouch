@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        icon="@drawble/ic_order_main.png"
+        id="@+id/orderTab"
+        title="订单管理"></tab>
+    <tab
+        icon="@drawble/ic_order_main.png"
+        id="@+id/foodTab"
+        title="菜品管理"></tab>
+    <tab
+        icon="@drawble/ic_order_main.png"
+        id="@+id/countTab"
+        title="统计"></tab>
+    <tab
+        icon="@drawble/ic_order_main.png"
+        id="@+id/saleTab"
+        title="促销活动"></tab>
+    <tab
+        icon="@drawble/ic_order_main.png"
+        id="@+id/mineTab"
+        title="我的"></tab>
+</tabs>
