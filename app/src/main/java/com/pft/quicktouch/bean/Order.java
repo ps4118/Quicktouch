@@ -9,7 +9,7 @@ public class Order {
     private int id;//订单Id
     private String daytime;//订单日期
     private String total;//总金
-    private List<Food> list;
+    private List<Food> list;//包含菜品
 
     public int getId() {
         return id;

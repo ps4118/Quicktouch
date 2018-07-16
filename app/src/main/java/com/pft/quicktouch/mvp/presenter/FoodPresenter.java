@@ -30,23 +30,6 @@ public class FoodPresenter extends BasePresenter<FoodContract.FoodView> {
         });
     }
 
-    /**
-     * 删除菜品
-     */
-    public void delFood(int id) {
-        mFoodModel.delFood(id, new ResultCallBack() {
-            @Override
-            public void onSuccess(String msg) {
-                getView().delSuccess(msg);
-            }
-
-            @Override
-            public void onError(String msg) {
-                getView().delError(msg);
-
-            }
-        });
-    }
 
     /**
      * 更改菜品

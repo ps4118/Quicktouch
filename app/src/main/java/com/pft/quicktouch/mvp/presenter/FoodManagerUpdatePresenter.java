@@ -84,7 +84,7 @@ public class FoodManagerUpdatePresenter extends BasePresenter<FoodManagerUpdateC
     }
 
     /**
-     * 获取当前账户已设置的也加菜品数量
+     * 获取当前账户已设置的特价菜品数量
      */
     public void getSaleCount(String url) {
         mFoodManagerUpdateMoel.getSaleCount(url, new ResultCallBack() {

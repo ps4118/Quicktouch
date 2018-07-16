@@ -119,15 +119,6 @@ public class AddFoodActivity extends BaseActivity<FoodContract.FoodView, FoodPre
 
     }
 
-    @Override
-    public void delSuccess(String msg) {
-
-    }
-
-    @Override
-    public void delError(String msg) {
-
-    }
 
     @Override
     public void updateSuccess(String msg) {

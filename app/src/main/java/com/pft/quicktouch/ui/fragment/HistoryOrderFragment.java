@@ -51,8 +51,6 @@ public class HistoryOrderFragment extends BaseFragment<HistoryOrderContract.Hist
 
     @Override
     public void initview() {
-
-
         mAdapter = new HistoryOrderAdapter(getContext(), list);
         listview.setAdapter(mAdapter);
         //设置下拉刷新，上拉加载
@@ -92,7 +90,7 @@ public class HistoryOrderFragment extends BaseFragment<HistoryOrderContract.Hist
             for (int j = 0; j < 3; j++) {
                 Food food = new Food();
                 food.setPrice("15");
-                food.setName("鱼香肉丝");
+                food.setName("鱼香肉丝鱼香肉丝鱼香肉丝鱼香肉丝鱼香肉丝鱼香肉丝");
                 food.setOrderTime("12:00:00");
                 food.setType("堂");
                 foodlist.add(food);

@@ -7,7 +7,13 @@ import com.pft.quicktouch.mvp.contract.FoodContract;
 
 import okhttp3.Call;
 
+/**
+ * 菜品MVP-M
+ */
 public class FoodModelImpl implements FoodContract.FoodModel {
+    /**
+     * @param callBack
+     */
     @Override
     public void addFood(final ResultCallBack callBack) {
         OkhttpUtil.okHttpGet("", new CallBackUtil.CallBackString() {
@@ -23,21 +29,6 @@ public class FoodModelImpl implements FoodContract.FoodModel {
         });
     }
 
-
-    @Override
-    public void delFood(int id, final ResultCallBack callBack) {
-        OkhttpUtil.okHttpGet("", new CallBackUtil.CallBackString() {
-            @Override
-            public void onFailure(Call call, Exception e) {
-                callBack.onError(e.toString());
-            }
-
-            @Override
-            public void onResponse(String response) {
-                callBack.onSuccess(response);
-            }
-        });
-    }
 
     @Override
     public void updateFood(final ResultCallBack callBack) {

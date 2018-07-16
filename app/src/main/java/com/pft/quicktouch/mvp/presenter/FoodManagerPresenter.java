@@ -14,6 +14,9 @@ public class FoodManagerPresenter extends BasePresenter<FoodManagerContract.Food
         mFoodManagerModel = new FoodManagerModelImpl();
     }
 
+    /**
+     * 获取菜品数据
+     */
     public void getList() {
         mFoodManagerModel.getFoods(new ResultCallBack() {
             @Override
@@ -28,7 +31,10 @@ public class FoodManagerPresenter extends BasePresenter<FoodManagerContract.Food
         });
     }
 
-
+    /**
+     * 更改菜品状态
+     * 有货、售罄、下架
+     */
     public void updateStatus() {
         mFoodManagerModel.updateStutas(new ResultCallBack() {
             @Override

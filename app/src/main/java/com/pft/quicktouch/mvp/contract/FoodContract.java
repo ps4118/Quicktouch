@@ -16,29 +16,12 @@ public class FoodContract {
 
         void addError(String msg);
 
-        void delSuccess(String msg);
-
-        void delError(String msg);
 
         void updateSuccess(String msg);
 
         void updateError(String msg);
     }
 
-    /**
-     * 删除菜品
-     */
-    public interface DeleteFoodView extends BaseView {
-
-
-    }
-
-    /**
-     * 更改菜品
-     */
-    public interface UpdateFoodView extends BaseView {
-
-    }
 
     /**
      * 菜品model层
@@ -47,8 +30,6 @@ public class FoodContract {
         //添加菜品
         void addFood(ResultCallBack callBack);
 
-        //删除菜品
-        void delFood(int id, ResultCallBack callBack);
 
         //编辑菜品
         void updateFood(ResultCallBack callBack);

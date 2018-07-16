@@ -29,6 +29,9 @@ public class TixianAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+        if (mList.size() == 0 || mList == null) {
+            return 0;
+        }
         return mList.size();
     }
 

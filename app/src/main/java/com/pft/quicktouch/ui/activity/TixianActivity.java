@@ -96,8 +96,8 @@ public class TixianActivity extends BaseActivity<TixianContract.TixianView, Tixi
 
 
         //获取数据(默认当年当月)
-        String url = "";
-        mPresenter.getTx(url);
+//        String url = "http://www.baidu.com";
+//        mPresenter.getTx(url);
 
     }
 
