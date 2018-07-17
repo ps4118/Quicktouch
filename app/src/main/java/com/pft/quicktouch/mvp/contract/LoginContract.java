@@ -5,6 +5,7 @@ import com.pft.quicktouch.interfaces.ResultCallBack;
 import com.pft.quicktouch.mvp.view.BaseView;
 
 import java.util.Calendar;
+import java.util.Map;
 
 import javax.security.auth.callback.Callback;
 
@@ -24,11 +25,8 @@ public class LoginContract {
     public interface LoginModel {
         /**
          * 登录
-         *
-         * @param phone 手机号
-         * @param pass  密码
          */
-        void login(String url, String phone, String pass, ResultCallBack Callback);
+        void login(String url, Map<String, String> map, ResultCallBack Callback);
 
     }
 

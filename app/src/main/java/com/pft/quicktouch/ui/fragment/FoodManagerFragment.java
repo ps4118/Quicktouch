@@ -19,6 +19,7 @@ import com.pft.quicktouch.mvp.contract.FoodManagerContract;
 import com.pft.quicktouch.mvp.presenter.FoodManagerPresenter;
 import com.pft.quicktouch.tool.ToastTool;
 import com.pft.quicktouch.ui.adapter.FoodManagerAdapter;
+import com.pft.quicktouch.view.CustomEmptyView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,9 +72,10 @@ public class FoodManagerFragment extends BaseFragment<FoodManagerContract.FoodMa
         listview.getLoadingLayoutProxy(true, true).setLoadingDrawable(getActivity().getResources().getDrawable(R.drawable.refresh_icon));
 
         //设置空数据视图
-        TextView view = new TextView(getContext());
-        view.setText("暂无数据");
-        view.setGravity(Gravity.CENTER);
+//        TextView view = new TextView(getContext());
+//        view.setText("暂无数据");
+//        view.setGravity(Gravity.CENTER);
+        CustomEmptyView view = new CustomEmptyView(getContext());
         listview.setEmptyView(view);
         //视图的点击事件（重新加载数据）
         view.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +92,7 @@ public class FoodManagerFragment extends BaseFragment<FoodManagerContract.FoodMa
                 listview.onRefreshComplete();
                 list.clear();
                 mAdapter.notifyDataSetChanged();
+
 
 
             }

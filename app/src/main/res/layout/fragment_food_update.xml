@@ -21,33 +21,46 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <ListView
-            android:id="@+id/typeLv"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"></ListView>
+            android:layout_height="match_parent"
+            android:scrollbars="none">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#DDDDDD"></View>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/addType"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:drawableStart="@drawable/ic_addtype"
-            android:drawablePadding="2dp"
-            android:gravity="center_vertical"
-            android:text="新增类别"
-            android:textColor="@color/titilebar_blue"
-            android:textSize="14sp" />
+                <com.pft.quicktouch.view.NoScrollListView
+                    android:id="@+id/typeLv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"></com.pft.quicktouch.view.NoScrollListView>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#DDDDDD"></View>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DDDDDD"></View>
+
+                <TextView
+                    android:id="@+id/addType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:drawablePadding="2dp"
+                    android:drawableStart="@drawable/ic_addtype"
+                    android:gravity="center_vertical"
+                    android:text="新增类别"
+                    android:textColor="@color/titilebar_blue"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DDDDDD"></View>
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
     <LinearLayout

@@ -1,8 +1,13 @@
 package com.pft.quicktouch.ui.activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -28,7 +33,8 @@ import butterknife.OnClick;
  * 新增菜品页面
  */
 public class AddFoodActivity extends BaseActivity<FoodContract.FoodView, FoodPresenter> implements TitleBar.TitleBarClickListener, FoodContract.FoodView {
-
+    //选取照片需要的权限
+    private String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
 
     @BindView(R.id.addimage)
     ImageView addimage;
@@ -75,7 +81,25 @@ public class AddFoodActivity extends BaseActivity<FoodContract.FoodView, FoodPre
 
     @OnClick(R.id.addimage)
     public void addImage() {
-        PictureTool.doPickPhotoFromGallery(AddFoodActivity.this);
+        isPermissions();
+    }
+
+    /**
+     * 判断是否已经获取到了权限
+     */
+    public void isPermissions() {
+        // 版本判断。当手机系统大于 23 时，才有必要去判断权限是否获取
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            ActivityCompat.requestPermissions(this, permissions, 321);
+
+
+        } else {
+
+            //小于23时，自动获取所有权限，跳转至系统相册选取图片
+            PictureTool.doPickPhotoFromGallery(AddFoodActivity.this);
+        }
+
+
     }
 
     @Override

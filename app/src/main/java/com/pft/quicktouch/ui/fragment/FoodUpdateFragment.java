@@ -1,5 +1,6 @@
 package com.pft.quicktouch.ui.fragment;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.kongzue.dialog.listener.InputDialogOkButtonClickListener;
+import com.kongzue.dialog.v2.InputDialog;
 import com.kongzue.dialog.v2.SelectDialog;
 import com.pft.quicktouch.R;
 import com.pft.quicktouch.bean.Food;
@@ -121,7 +124,16 @@ public class FoodUpdateFragment extends BaseFragment<FoodManagerUpdateContract.F
      */
     @OnClick(R.id.addType)
     public void addType() {
-
+        InputDialog.show(getContext(), "新增类别", "请输出类别名", new InputDialogOkButtonClickListener() {
+            @Override
+            public void onClick(Dialog dialog, String inputText) {
+                FoodType type = new FoodType();
+                type.setName(inputText);
+                typeList.add(type);
+                mFoodTypeAdapter.notifyDataSetChanged();
+                dialog.dismiss();
+            }
+        });
     }
 
     /**

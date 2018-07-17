@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.tu.loadingdialog.LoadingDailog;
+import com.pft.quicktouch.Constant;
 import com.pft.quicktouch.MyApplicaiton;
 import com.pft.quicktouch.R;
 import com.pft.quicktouch.mvp.contract.LoginContract;
@@ -15,6 +16,9 @@ import com.pft.quicktouch.mvp.presenter.LoginPresenter;
 import com.pft.quicktouch.tool.NetTool;
 import com.pft.quicktouch.tool.SpTool;
 import com.pft.quicktouch.tool.ToastTool;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -65,11 +69,20 @@ public class LoginActivity extends BaseActivity<LoginContract.LoginView, LoginPr
         String phoneStr = phone.getText().toString().trim();
         String passStr = pass.getText().toString().trim();
         //登录请求url
-        String url = "http://www.baidu.com";
+
+        String url = Constant.BASE_URL + "API/AndriodLogin";
+        Map<String, String> map = new HashMap<>();
+        map.put("name", phoneStr);
+        map.put("password", passStr);
         if (!NetTool.checkNetandWifi(LoginActivity.this)) {
             ToastTool.showToast(LoginActivity.this, "请检查网络设置");
         } else {
-            mPresenter.login(url, phoneStr, passStr);
+            if (phoneStr.equals("") || phoneStr.equals("")) {
+                ToastTool.showToast(LoginActivity.this, "账号和密码不能为空");
+            } else {
+                mPresenter.login(url, map);
+            }
+
         }
     }
 
